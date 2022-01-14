@@ -1,30 +1,37 @@
 <?php 
 
-    $stringOne = 'my email is ';
-    $stringTwo = 'mario123@thenetninja.co.uk';
+    $ninjas = ['shaun', 'ryu', 'yoshi'];
 
-    echo $stringOne.$stringTwo;
+    // for($i = 0; $i < count($ninjas); $i++){
+    //  echo $ninjas[$i] . '<br />';
+    // }
 
-    $name = 'mario';
+    // foreach($ninjas as $ninja){
+    //  echo $ninja . ' <br/>';
+    // }
 
-    // concatenation
-    echo 'Hey, my name is '.$name;
+    $products = [
+        ['name' => 'shiny star', 'price' => 20],
+        ['name' => 'green shell', 'price' => 10],
+        ['name' => 'red shell', 'price' => 15],
+        ['name' => 'gold coin', 'price' => 5],
+        ['name' => 'lightning bolt', 'price' => 40],
+        ['name' => 'banana skin', 'price' => 2]
+    ];
 
-    // variable interpolation
-    echo "Hey, my name is $name"; 
+    // foreach($products as $product){
+    //  echo $product['name'] .' - '. $product['price'];
+    //  echo '<br />';
+    // }
 
-    // escaping characters
-    echo "the ninja screamed \"whaaa\"";
-    echo 'the ninja scream "whaaa"';
+    $i = 0;
 
-    // get single characters
-    echo $name[1];
+    while($i < count($products)){
+        echo $products[$i]['name'];
+        echo '<br />';
+        $i++;
+    }
 
-    // string functions
-    echo strlen($name);
-    echo strtoupper($name);
-    echo strtolower($name);
-    echo str_replace('m', 'w', $name);
 
 ?>
 
@@ -35,7 +42,13 @@
 </head>
 <body>
 
-    <p><?php echo $name; ?></p>
+    <h1>Products</h1>
+    <ul>
+        <?php foreach($products as $product){ ?>
+            <h3><?php echo $product['name']; ?></h3>
+            <p>£<?php echo $product['price']; ?></p>
+        <?php } ?>
+    </ul>
 
 </body>
 </html>
